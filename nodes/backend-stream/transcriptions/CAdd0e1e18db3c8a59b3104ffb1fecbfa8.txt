@@ -1,0 +1,11 @@
+voicebot: Hello, zulqurnain, this is Alloy calling from Longevity Health Plans. We specialize in supplying high-purity, pharmaceutical-grade semaglutide peptides with an emphasis on unmatched quality, consistency, and a focus on your health and wellness goals. How are you today?
+voicebot: Thank you! I'd love to help you learn more about our vitamin C tablets and how they can support your health. To get started, may I have your full name, please?
+customer: Doing great
+customer: Yeah, why not?
+voicebot: Thank you, zulqurnain. Did I get that right, your full name is zulqurnain?
+voicebot: Got it, Zulq
+customer: ఇట్స్ దూరు కున్నే
+customer: Yeah
+voicebot: Thank you, Zulqurnain. Could you also provide your email address so we can send you more information and set up an appointment?
+voicebot: Thank you, Zulqurnain. Have a great day!
+customer: No, I'm not interested

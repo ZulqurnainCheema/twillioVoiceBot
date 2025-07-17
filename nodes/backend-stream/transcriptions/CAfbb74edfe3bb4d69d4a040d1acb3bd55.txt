@@ -1,0 +1,5 @@
+customer: You
+customer: and
+voicebot: Hello! It seems like there might be some difficulty with the connection. If you're still interested in learning more about our vitamin C tablets, please let me know, and I'll be happy to help. If you have any questions or would like to proceed,
+customer: Yeah.
+voicebot: Thank you, have a great day!

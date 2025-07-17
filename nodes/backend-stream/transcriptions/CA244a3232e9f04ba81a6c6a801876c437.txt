@@ -1,0 +1,3 @@
+voicebot: Hello! This is Alloy calling from Longevity Health Plans. We specialize in supplying high-purity, pharmaceutical-grade vitamin C tablets with an emphasis on unmatched quality and consistency. May I have your full name, please?
+voicebot: Thank you for your time! Have a great day!
+customer: No

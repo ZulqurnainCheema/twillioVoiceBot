@@ -1,0 +1,3 @@
+voicebot: Hello Zulqurnain, this is Alloy calling from Longevity Health Plans. We specialize in supplying high-purity, pharmaceutical-grade semaglutide peptides
+customer: Hello
+voicebot: Hello! How are you today? This is Alloy calling from Longevity Health Plans. We specialize in supplying high-purity, pharmaceutical-grade vitamin C tablets with an emphasis on unmatched quality and consistency. Are you interested in learning more about our products?

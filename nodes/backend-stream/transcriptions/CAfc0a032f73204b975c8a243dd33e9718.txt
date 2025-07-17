@@ -1,0 +1,4 @@
+voicebot: Hello! It seems there might have been a mix-up with the introduction. I’m actually calling from NutraVita, where we specialize
+voicebot: Thank you, have a great day!
+customer: Thank you.
+customer: Bye.

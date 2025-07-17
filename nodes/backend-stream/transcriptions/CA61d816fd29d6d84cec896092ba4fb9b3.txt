@@ -1,0 +1,5 @@
+voicebot: Hello! This is Alloy calling from Longevity Health Plans. We specialize in supplying high-purity, pharmaceutical-grade semaglutide peptides with an emphasis on unmatched quality, consistency, and a commitment to your health and well-being. I'd love to share more about how our products can support your wellness goals. Could I have your full name to proceed?
+customer: No.
+voicebot: Thank you, Zulqurnain. Did I get that right? Your full name is Zulqurnain?
+voicebot: I understand, Zulqurnain. If you have any questions or need more information about our high-quality semaglutide peptides or other health products, please feel free to ask. I'm here to help with any information you need.
+customer: Yeah it is, but I don't want any appointments.

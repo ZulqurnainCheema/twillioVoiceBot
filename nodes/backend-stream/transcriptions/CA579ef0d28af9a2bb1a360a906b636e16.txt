@@ -1,0 +1,5 @@
+voicebot: Hello Zulqurnain, this is Alloy calling from Longevity Health Plans. We specialize in supplying high-purity, pharmaceutical-grade semaglutide peptides with an emphasis on unmatched quality and consistency. How are you doing today?
+voicebot: Thank you, have a great day!
+customer: I am not interested.
+voicebot: Goodbye! Have a wonderful day!
+customer: Goodbye

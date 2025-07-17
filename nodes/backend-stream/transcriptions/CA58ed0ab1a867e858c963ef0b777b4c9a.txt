@@ -1,0 +1,5 @@
+voicebot: Hello! How can I help you today?
+customer: You call me, you tell me.
+voicebot: I'm here to talk about our vitamin C tablets that can help you maintain your health and wellness. Could I get your full name so I can address you properly?
+customer: No, I am not interested.
+voicebot: Thank you for your time. Have a great day!

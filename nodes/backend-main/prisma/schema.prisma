@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("MYSQL_URL")
+}
+
+model calls {
+  id                 Int       @id @default(autoincrement())
+  campaignId         Int
+  From               String
+  contactName        String
+  contactPhone       String
+  BussinessName      String
+  callStatus         String
+  createdAt          DateTime  @default(now())
+  callSid            String    @unique
+  recordingsLink     String?   @db.Text
+  transcriptionsLink String?   @db.Text
+  CallDuration       String
+  campaigns          campaigns @relation(fields: [campaignId], references: [id])
+
+  @@index([campaignId], map: "calls_campaignId_fkey")
+}
+
+model campaigns {
+  id                  Int      @id @default(autoincrement())
+  contacts            String
+  modelId             Int
+  campaignName        String
+  campaignDescription String   @db.Text
+  callScript          String
+  status              String   @default("new")
+  lastContactIndex    Int      @default(0)
+  createdAt           DateTime @default(now())
+  calls               calls[]
+  models              models   @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  leads               leads[]
+
+  @@index([modelId], map: "campaigns_modelId_fkey")
+}
+
+model models {
+  id           Int         @id @default(autoincrement())
+  modelName    String
+  instructions String      @db.Text
+  trainingData String      @db.Text
+  createdAt    DateTime    @default(now())
+  campaigns    campaigns[]
+}
+
+model leads {
+  id           Int      @id @default(autoincrement())
+  campaignId   Int
+  createdAt    DateTime @default(now())
+  name         String
+  email        String
+  contactName  String
+  contactPhone String
+  businessName String
+
+  campaigns campaigns @relation(fields: [campaignId], references: [id])
+
+  @@index([campaignId], map: "leads_campaignId_fkey")
+}
+
+model User {
+  id       String @id @default(uuid())
+  email    String @unique
+  password String
+
+  RefreshToken RefreshToken[]
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}

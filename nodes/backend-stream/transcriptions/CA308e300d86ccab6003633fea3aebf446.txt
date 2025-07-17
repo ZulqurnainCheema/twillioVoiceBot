@@ -1,0 +1,9 @@
+customer: Thank you.
+customer: Thank you.
+voicebot: Hello! Could you please tell me your full name?
+customer: Hello
+voicebot: Hello! May I please have your full name?
+customer: No, you can't
+voicebot: Thank you! Just to verify, your full name is [repeat the name]? Did I get that right?
+customer: نون گھونگ
+voicebot: Could you please spell your full name for me, letter by letter, to ensure I have it correctly?

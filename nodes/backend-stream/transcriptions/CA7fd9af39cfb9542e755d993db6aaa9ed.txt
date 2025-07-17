@@ -1,0 +1,9 @@
+voicebot: Hello! How can I assist you today?
+voicebot: Could you please confirm your full name?
+customer: You
+customer: Siapa kamu dan kenapa kamu menelepon?
+voicebot: Hello! I'm a representative from Longevity Health Plans. We specialize in high-quality vitamin supplements. Could I kindly have your full name so I can assist you further?
+customer: No
+customer: ¡Nooo!
+customer: I don't know why you are asking me.
+voicebot: Thank you for your time. If you have any questions in the future, please don't hesitate to reach out. Have a great day!
