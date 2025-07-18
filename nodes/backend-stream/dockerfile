@@ -6,9 +6,6 @@ WORKDIR /app
 # Enable corepack and install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Add required packages for Prisma binary compatibility
-RUN apk add --no-cache openssl1.1 bash
-
 # Copy package files and install dependencies
 COPY package.json pnpm-lock.yaml* ./
 RUN pnpm install
