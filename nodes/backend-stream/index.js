@@ -576,7 +576,7 @@ ${customParamters.trainingData}
   });
 });
 
-fastify.listen({ port: PORT }, (err) => {
+fastify.listen({ port: PORT, host: "0.0.0.0" }, (err) => {
   if (err) {
     logger.error(err);
     process.exit(1);
