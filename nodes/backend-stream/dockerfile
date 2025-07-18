@@ -12,6 +12,7 @@ RUN pnpm install
 
 # Copy the rest of the app files
 COPY . .
+ENV PRISMA_CLI_BINARY_TARGETS="native,debian-openssl-3.0.x"
 
 # ✅ Generate Prisma Client
 RUN pnpm prisma generate
