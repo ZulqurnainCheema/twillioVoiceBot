@@ -14,7 +14,7 @@ RUN pnpm install
 COPY . .
 
 # Expose correct port
-EXPOSE 3000  # Change to 5050 or 5173 in other apps
+EXPOSE 3000  
 
 # Use envs passed from Coolify
 CMD ["pnpm", "run", "dev"]
