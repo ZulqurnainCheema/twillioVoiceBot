@@ -40,7 +40,7 @@ server.register(fastifyJwt, {
 });
 server.register(authPlugin);
 server.register(fastifyCors, {
-  origin: ["http://localhost:5173", "http://localhost:5050"], // exact origin, not '*'
+  origin: "*", // exact origin, not '*'
   credentials: true, // Adjust this for production (e.g., specific origins)
   methods: ["GET", "POST", "OPTIONS"],
 });
