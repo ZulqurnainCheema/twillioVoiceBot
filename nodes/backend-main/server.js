@@ -16,7 +16,7 @@ import fastifyJwt from "@fastify/jwt";
 import userRoutes from "./routes/userRoutes.js";
 import fp from "fastify-plugin";
 import authPlugin from "./plugins/authPlugin.js";
-dotenv.config({ path: "./.env.main" });
+dotenv.config();
 if (!process.env.DATABASE_URL) throw new Error("Missing DATABASE_URL");
 
 const server = fastify({
