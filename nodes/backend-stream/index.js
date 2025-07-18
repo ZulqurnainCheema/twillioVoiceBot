@@ -153,7 +153,7 @@ fastify.post("/make-call/:to", async (request, reply) => {
     };
     reply.send({ message: `Call initiated to`, callSid: call.sid });
   } catch (error) {
-    reply.code(500).send({ error: error.message });
+    reply.code(500).send({ error: error });
   }
 });
 fastify.get("/call-status", async (request, reply) => {
