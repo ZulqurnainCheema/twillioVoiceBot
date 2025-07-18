@@ -55,7 +55,7 @@ const createcampaignController = async (request, reply) => {
     return reply.status(201).send(newCampaign);
   } catch (err) {
     logger.error("Error creating campaign:", err);
-    return reply.status(500).send({ error: "Internal server error" });
+    return reply.status(500).send({ error: "Internal server error",err });
   }
 };
 
