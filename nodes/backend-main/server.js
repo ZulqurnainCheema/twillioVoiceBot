@@ -40,7 +40,10 @@ server.register(fastifyJwt, {
 });
 server.register(authPlugin);
 server.register(fastifyCors, {
-  origin: ["http://egwwss4s0wgw48ok40occ8so.31.97.218.226.sslip.io"], // exact origin, not '*'
+  origin: [
+    "http://egwwss4s0wgw48ok40occ8so.31.97.218.226.sslip.io",
+    "http://cs4wc4s8080wgo8ow0woksg8.31.97.218.226.sslip.io",
+  ], // exact origin, not '*'
   credentials: true, // Adjust this for production (e.g., specific origins)
   methods: ["GET", "POST", "OPTIONS"],
 });
