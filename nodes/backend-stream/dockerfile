@@ -14,9 +14,6 @@ RUN pnpm install
 COPY . .
 ENV PRISMA_CLI_BINARY_TARGETS="native,debian-openssl-3.0.x"
 
-# ✅ Generate Prisma Client
-RUN pnpm prisma generate
-
 # Expose correct port
 EXPOSE 5050
 
