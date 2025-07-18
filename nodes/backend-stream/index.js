@@ -38,7 +38,7 @@ const fastify = Fastify({
   logger: loggerOptions,
 });
 fastify.register(fastifyCors, {
-  origin: "*", // Adjust this for production (e.g., specific origins)
+  origin: true, // Adjust this for production (e.g., specific origins)
   methods: ["GET", "POST", "OPTIONS"],
 });
 fastify.register(fastifyFormBody);
