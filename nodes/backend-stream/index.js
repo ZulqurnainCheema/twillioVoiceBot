@@ -17,6 +17,13 @@ const Prisma = new PrismaClient();
 // Retrieve environment variables
 const { OPENAI_API_KEY, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_NUMBER } =
   process.env;
+
+console.log(
+  OPENAI_API_KEY,
+  TWILIO_ACCOUNT_SID,
+  TWILIO_AUTH_TOKEN,
+  TWILIO_NUMBER
+);
 const callParametersStore = {};
 // Validate environment variables
 if (!OPENAI_API_KEY) {
@@ -116,8 +123,9 @@ fastify.post("/make-call/:to", async (request, reply) => {
     trainingData,
   } = request.body;
 
-
-  logger.info(`${campaignId},${contactName},${companyName},${callScript},${instructions},${trainingData}`)
+  logger.info(
+    `${campaignId},${contactName},${companyName},${callScript},${instructions},${trainingData}`
+  );
 
   if (
     !campaignId ||
