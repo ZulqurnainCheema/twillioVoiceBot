@@ -17,7 +17,6 @@ const Prisma = new PrismaClient();
 // Retrieve environment variables
 const { OPENAI_API_KEY, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_NUMBER } =
   process.env;
-
 const callParametersStore = {};
 // Validate environment variables
 if (!OPENAI_API_KEY) {
@@ -39,7 +38,7 @@ const fastify = Fastify({
   logger: loggerOptions,
 });
 fastify.register(fastifyCors, {
-  origin: true, // Adjust this for production (e.g., specific origins)
+  origin: "*", // Adjust this for production (e.g., specific origins)
   methods: ["GET", "POST", "OPTIONS"],
 });
 fastify.register(fastifyFormBody);
@@ -89,7 +88,7 @@ fastify.all("/incoming-call", async (request, reply) => {
 });
 
 // Route for Twilio to handle outgoing calls
-fastify.post("/outgoing-call", async (request, reply) => {
+fastify.get("/outgoing-call", async (request, reply) => {
   const twimlResponse = `<?xml version="1.0" encoding="UTF-8"?>
     <Response>
       <Connect>
@@ -117,9 +116,7 @@ fastify.post("/make-call/:to", async (request, reply) => {
     trainingData,
   } = request.body;
 
-  logger.info(
-    `${campaignId},${contactName},${companyName},${callScript},${instructions},${trainingData}`
-  );
+  // logger.info(`${campaignId},${contactName},${companyName},${callScript},${instructions},${trainingData}`)
 
   if (
     !campaignId ||
@@ -155,14 +152,18 @@ fastify.post("/make-call/:to", async (request, reply) => {
     };
     reply.send({ message: `Call initiated to`, callSid: call.sid });
   } catch (error) {
-    reply.code(500).send({ error: error });
+    reply.code(500).send({ error: error.message });
   }
 });
-fastify.post("/call-status", async (request, reply) => {
+fastify.get("/call-status", async (request, reply) => {
   const { CallSid, CallStatus, From, To, CallDuration, RecordingUrl } =
     request.query;
 
   const calldata = callParametersStore[CallSid];
+  if (!calldata) {
+  log.warn(`No call parameters found for ${CallSid}`);
+  return;
+}
   try {
     const callDetails = await Prisma.calls.create({
       data: {
@@ -185,7 +186,7 @@ fastify.post("/call-status", async (request, reply) => {
 
     logger.info("Successfully saved the call details");
   } catch (error) {
-    logger.info(`Error while ,${error}`);
+    logger.info("Error while ", error);
   }
 });
 
@@ -579,7 +580,7 @@ ${customParamters.trainingData}
   });
 });
 
-fastify.listen({ port: PORT, host: "0.0.0.0" }, (err) => {
+fastify.listen({ port: PORT }, (err) => {
   if (err) {
     logger.error(err);
     process.exit(1);
