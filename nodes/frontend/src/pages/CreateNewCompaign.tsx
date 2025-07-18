@@ -59,7 +59,7 @@ const CreateNewCampaign = () => {
 
   const fetchModels = async () => {
     api
-      .get(`${import.meta.env.VITE_ROOT_DOMAIN}/api/models/`)
+      .get(`/models/`)
       .then((response) => {
         if (!response) {
           throw new Error("Failed to fetch models");
@@ -95,7 +95,7 @@ const CreateNewCampaign = () => {
     try {
       console.log("Sending form data:", formData); // Debug log
       const response = await api.post(
-        "http://localhost:3000/api/campaigns/create-campaign",
+        "/campaigns/create-campaign",
         formData,
         {
           headers: {
