@@ -185,7 +185,7 @@ fastify.post("/call-status", async (request, reply) => {
 
     logger.info("Successfully saved the call details");
   } catch (error) {
-    logger.info("Error while ", error);
+    logger.info(`Error while ,${error}`);
   }
 });
 
