@@ -18,12 +18,8 @@ const Prisma = new PrismaClient();
 const { OPENAI_API_KEY, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_NUMBER } =
   process.env;
 
-console.log(
-  OPENAI_API_KEY,
-  TWILIO_ACCOUNT_SID,
-  TWILIO_AUTH_TOKEN,
-  TWILIO_NUMBER
-);
+
+
 const callParametersStore = {};
 // Validate environment variables
 if (!OPENAI_API_KEY) {
