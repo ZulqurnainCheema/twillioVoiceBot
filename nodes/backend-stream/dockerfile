@@ -21,8 +21,7 @@ COPY . .
 # Set Prisma binary target explicitly
 ENV PRISMA_CLI_BINARY_TARGETS="native,debian-openssl-3.0.x"
 
-# Generate Prisma Client
-RUN pnpm prisma generate
+
 
 # Expose app port
 EXPOSE 5050
