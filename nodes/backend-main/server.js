@@ -1,5 +1,6 @@
 import fastify from "fastify";
-import { PrismaClient } from "@prisma/client";
+import pkg from "@prisma/client";
+const { PrismaClient } = pkg;
 
 import { modelRoutes } from "./routes/modelRoutes.js";
 import fastifyCors from "@fastify/cors";

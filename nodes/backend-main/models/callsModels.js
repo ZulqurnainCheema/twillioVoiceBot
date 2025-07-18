@@ -1,4 +1,5 @@
-import { PrismaClient } from "@prisma/client";
+import pkg from "@prisma/client";
+const { PrismaClient } = pkg;
 const Prisma = new PrismaClient();
 import { logger } from "../utils/logger.js";
 const getCalls = async () => {
