@@ -10,4 +10,9 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  preview:{
+     host: '0.0.0.0',
+    port: 5173,
+    allowedHosts: ['egwwss4s0wgw48ok40occ8so.31.97.218.226.sslip.io']
+  }
 });
