@@ -32,7 +32,7 @@ model campaigns {
   modelId             Int
   campaignName        String
   campaignDescription String   @db.Text
-  callScript          String
+  callScript          String   @db.Text
   status              String   @default("new")
   lastContactIndex    Int      @default(0)
   createdAt           DateTime @default(now())
