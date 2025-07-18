@@ -6,13 +6,22 @@ WORKDIR /app
 # Enable corepack and install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
+# Add required packages for Prisma binary compatibility
+RUN apk add --no-cache openssl1.1 bash
+
 # Copy package files and install dependencies
 COPY package.json pnpm-lock.yaml* ./
 RUN pnpm install
 
 # Copy the rest of the app files
 COPY . .
+
+# Add Prisma-specific environment variables
+ENV PRISMA_ENGINES_CHECKSUM_IGNORE_MISSING=1
 ENV PRISMA_CLI_BINARY_TARGETS="native,debian-openssl-3.0.x"
+
+# Generate Prisma client
+RUN pnpm prisma generate
 
 # Expose correct port
 EXPOSE 5050
