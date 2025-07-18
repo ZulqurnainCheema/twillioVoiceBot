@@ -19898,3 +19898,15 @@
 {"level":30,"time":1752790559168,"pid":2436,"hostname":"Noob","reqId":"req-2n","res":{"statusCode":200},"responseTime":30.43150000087917,"msg":"request completed"}
 {"level":30,"time":1752790559172,"pid":2436,"hostname":"Noob","reqId":"req-2o","req":{"method":"GET","url":"/api/campaigns/","host":"localhost:3000","remoteAddress":"::1","remotePort":53376},"msg":"incoming request"}
 {"level":30,"time":1752790559178,"pid":2436,"hostname":"Noob","reqId":"req-2o","res":{"statusCode":200},"responseTime":6.132200000807643,"msg":"request completed"}
+{"level":30,"time":1752798206134,"pid":19528,"hostname":"Noob","msg":"Server listening at http://[::1]:3000"}
+{"level":30,"time":1752798206144,"pid":19528,"hostname":"Noob","msg":"Server listening at http://127.0.0.1:3000"}
+{"level":30,"time":1752798206145,"pid":19528,"hostname":"Noob","msg":"Server is running at http://localhost:3000"}
+{"level":30,"time":1752798212722,"pid":19528,"hostname":"Noob","reqId":"req-1","req":{"method":"GET","url":"/","host":"[::1]:3000","remoteAddress":"::1","remotePort":55238},"msg":"incoming request"}
+{"level":50,"time":1752798214187,"pid":19528,"hostname":"Noob","msg":"Database connection failed:"}
+{"level":30,"time":1752798214236,"pid":19528,"hostname":"Noob","reqId":"req-1","res":{"statusCode":500},"responseTime":1507.4522999972105,"msg":"request completed"}
+{"level":30,"time":1752798216137,"pid":19528,"hostname":"Noob","reqId":"req-2","req":{"method":"GET","url":"/favicon.ico","host":"[::1]:3000","remoteAddress":"::1","remotePort":55238},"msg":"incoming request"}
+{"level":30,"time":1752798216140,"pid":19528,"hostname":"Noob","reqId":"req-2","msg":"Route GET:/favicon.ico not found"}
+{"level":30,"time":1752798216142,"pid":19528,"hostname":"Noob","reqId":"req-2","res":{"statusCode":404},"responseTime":3.451799999922514,"msg":"request completed"}
+{"level":30,"time":1752798399476,"pid":1648,"hostname":"Noob","msg":"Server is running at http://localhost:3000"}
+{"level":30,"time":1752798399473,"pid":1648,"hostname":"Noob","msg":"Server listening at http://127.0.0.1:3000"}
+{"level":30,"time":1752798399474,"pid":1648,"hostname":"Noob","msg":"Server listening at http://192.168.1.48:3000"}

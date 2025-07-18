@@ -16,7 +16,7 @@ import fastifyJwt from "@fastify/jwt";
 import userRoutes from "./routes/userRoutes.js";
 import fp from "fastify-plugin";
 import authPlugin from "./plugins/authPlugin.js";
-dotenv.config({path:"./.env.main"});
+dotenv.config({ path: "./.env.main" });
 if (!process.env.DATABASE_URL) throw new Error("Missing DATABASE_URL");
 
 const server = fastify({
@@ -34,7 +34,7 @@ process.on("unhandledRejection", (reason, promise) => {
 
 const prisma = new PrismaClient();
 
-server.register(fastifyCookie)
+server.register(fastifyCookie);
 server.register(fastifyJwt, {
   secret: process.env.JWT_SECRET,
 });
@@ -113,7 +113,7 @@ server.get("/secure-audio", async (request, reply) => {
 // Start the server
 const start = async () => {
   try {
-    await server.listen({ port: 3000 });
+    await server.listen({ port: 3000, host: "0.0.0.0" });
     logger.info(`Server is running at http://localhost:3000`);
   } catch (err) {
     server.log.error(err);
