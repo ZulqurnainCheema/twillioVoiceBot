@@ -189,7 +189,7 @@ const startCampaignController = async (request, reply) => {
           logger.info(`✅ Called ${contact.name} (Index ${overallIndex})`);
         } catch (error) {
           logger.error(
-            `❌ Error calling ${contact.name}: ${error.message}. Stopping campaign.`
+            `❌ Error calling ${contact.name}: ${error.message}. Stopping campaign. ${error}`
           );
           return reply.status(500).send({
             error: "Campaign interrupted due to chatbot error.",
