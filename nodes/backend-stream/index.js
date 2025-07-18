@@ -18,8 +18,6 @@ const Prisma = new PrismaClient();
 const { OPENAI_API_KEY, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_NUMBER } =
   process.env;
 
-
-
 const callParametersStore = {};
 // Validate environment variables
 if (!OPENAI_API_KEY) {
@@ -91,7 +89,7 @@ fastify.all("/incoming-call", async (request, reply) => {
 });
 
 // Route for Twilio to handle outgoing calls
-fastify.get("/outgoing-call", async (request, reply) => {
+fastify.post("/outgoing-call", async (request, reply) => {
   const twimlResponse = `<?xml version="1.0" encoding="UTF-8"?>
     <Response>
       <Connect>
@@ -119,9 +117,9 @@ fastify.post("/make-call/:to", async (request, reply) => {
     trainingData,
   } = request.body;
 
-  logger.info(
-    `${campaignId},${contactName},${companyName},${callScript},${instructions},${trainingData}`
-  );
+  // logger.info(
+  //   `${campaignId},${contactName},${companyName},${callScript},${instructions},${trainingData}`
+  // );
 
   if (
     !campaignId ||
@@ -160,7 +158,7 @@ fastify.post("/make-call/:to", async (request, reply) => {
     reply.code(500).send({ error: error });
   }
 });
-fastify.get("/call-status", async (request, reply) => {
+fastify.post("/call-status", async (request, reply) => {
   const { CallSid, CallStatus, From, To, CallDuration, RecordingUrl } =
     request.query;
 
