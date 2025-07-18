@@ -1,23 +1,31 @@
-FROM node:20-alpine
+FROM node:20-slim
 
-# Create app directory
+# Set working directory
 WORKDIR /app
+
+# Install dependencies for Prisma & OpenSSL
+RUN apt-get update && apt-get install -y openssl bash curl && rm -rf /var/lib/apt/lists/*
 
 # Enable corepack and install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Copy package files and install dependencies
+# Copy package files
 COPY package.json pnpm-lock.yaml* ./
+
+# Install dependencies
 RUN pnpm install
 
-# Copy the rest of the app files
+# Copy the rest of the app
 COPY . .
 
-# ✅ Generate Prisma Client
+# Set Prisma binary target explicitly
+ENV PRISMA_CLI_BINARY_TARGETS="native,debian-openssl-3.0.x"
+
+# Generate Prisma Client
 RUN pnpm prisma generate
 
-# Expose correct port
-EXPOSE 3000
+# Expose app port
+EXPOSE 3030
 
-# Use envs passed from Coolify
+# Run your app
 CMD ["pnpm", "run", "dev"]
