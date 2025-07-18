@@ -116,7 +116,8 @@ fastify.post("/make-call/:to", async (request, reply) => {
     trainingData,
   } = request.body;
 
-  // logger.info(`${campaignId},${contactName},${companyName},${callScript},${instructions},${trainingData}`)
+
+  logger.info(`${campaignId},${contactName},${companyName},${callScript},${instructions},${trainingData}`)
 
   if (
     !campaignId ||
