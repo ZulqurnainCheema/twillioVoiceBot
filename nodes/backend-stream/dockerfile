@@ -17,7 +17,7 @@ COPY . .
 RUN pnpm prisma generate
 
 # Expose correct port
-EXPOSE 3000
+EXPOSE 5050
 
 # Use envs passed from Coolify
 CMD ["pnpm", "run", "dev"]
