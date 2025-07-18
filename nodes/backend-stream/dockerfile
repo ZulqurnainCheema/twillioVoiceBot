@@ -13,8 +13,6 @@ RUN pnpm install
 # Copy the rest of the app files
 COPY . .
 
-# ✅ Generate Prisma Client
-RUN pnpm prisma generate
 
 # Expose correct port
 EXPOSE 5050
