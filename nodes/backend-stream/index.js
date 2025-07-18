@@ -4,9 +4,7 @@ import dotenv from "dotenv";
 import fastifyFormBody from "@fastify/formbody";
 import fastifyWs from "@fastify/websocket";
 import twilio from "twilio";
-import pkg from "@prisma/client";
-const { PrismaClient } = pkg;
-
+import { PrismaClient } from "./generated/prisma/index.js";
 import { sendAppointmentEmail } from "./utils/googleClient.js";
 import { logger } from "./utils/logger.js";
 import { loggerOptions } from "./utils/logger.js";

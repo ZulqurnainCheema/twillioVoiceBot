@@ -1,5 +1,4 @@
-import pkg from "@prisma/client";
-const { PrismaClient } = pkg;
+import { PrismaClient } from "../generated/prisma/index.js";
 import {
   createcampaign,
   getCampaigns,
@@ -56,7 +55,7 @@ const createcampaignController = async (request, reply) => {
     return reply.status(201).send(newCampaign);
   } catch (err) {
     logger.error("Error creating campaign:", err);
-    return reply.status(500).send({ error: "Internal server error", err });
+    return reply.status(500).send({ error: "Internal server error",err });
   }
 };
 

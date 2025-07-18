@@ -1,5 +1,4 @@
-import pkg from "@prisma/client";
-const { PrismaClient } = pkg;
+import { PrismaClient } from "../generated/prisma/index.js";
 const Prisma = new PrismaClient();
 import fs from "fs";
 import { logger } from "../utils/logger.js";
@@ -116,5 +115,5 @@ export {
   getCampaignCalls,
   getCampaignStatus,
   updateCampaignStatus,
-  updateCampaignLastContactIndex,
+  updateCampaignLastContactIndex
 };

@@ -1,6 +1,5 @@
-import pkg from "@prisma/client";
-const { PrismaClient } = pkg;
-import fs from "fs";
+import { PrismaClient } from "../generated/prisma/index.js";
+import fs from 'fs';
 const Prisma = new PrismaClient();
 import { logger } from "../utils/logger.js";
 const createNewModel = async (instructions, modelName, trainingData) => {
@@ -54,12 +53,12 @@ const getModels = async () => {
 const deleteModels = async (id) => {
   try {
     const deleteModel = await Prisma.models.delete({
-      where: { id: id },
+        where:{id: id}
     });
     return deleteModel;
-  } catch (error) {
+  } catch(error){
     throw error;
   }
 };
 
-export { createNewModel, getModels, deleteModels };
+export { createNewModel, getModels,deleteModels };
