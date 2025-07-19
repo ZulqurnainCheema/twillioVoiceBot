@@ -38,7 +38,7 @@ const fastify = Fastify({
   logger: loggerOptions,
 });
 fastify.register(fastifyCors, {
-  origin: true, // Adjust this for production (e.g., specific origins)
+  origin: "*", // Adjust this for production (e.g., specific origins)
   methods: ["GET", "POST", "OPTIONS"],
 });
 fastify.register(fastifyFormBody);
@@ -580,7 +580,7 @@ ${customParamters.trainingData}
   });
 });
 
-fastify.listen({ port: PORT,host: "0.0.0.0"  }, (err) => {
+fastify.listen({ port: PORT }, (err) => {
   if (err) {
     logger.error(err);
     process.exit(1);
